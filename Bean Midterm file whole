@@ -1,0 +1,61 @@
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+
+/**
+ *
+ * @author Tamira's Beanfolder
+ */
+@webservice(serviceName = "Travel Reservation")
+public class  CountryInfo{
+    public void CountryData{
+        Country aust = new Country();
+        aust.setName("Austrila");
+        aust.setCap("Sydney");
+        aust.setCurr(Curr.AUD);
+        aust.setpop(25.69 million);
+        
+        countries.put(aust.getname(), aust);
+        
+        Country mexico = new Country();
+        mexico.setName("Mexico");
+        mexico.setCap("Mexico");
+        mexico.setCurr(Curr.peso);
+        mexico.setpop(128.9 million);
+        
+        countries.put(mexico.getname(), mexico);
+        
+        Country canada = new Country();
+        canada.setName("Canada");
+        canada.setCap("Ottawa");
+        canada.setCurr(Curr.CAD);
+        canada.setpop(38.01 million);
+        
+        countries.put(canada.getname(), canada);
+                
+}
+    public class Country pickCountry(String Name){
+        assert.notNull(Name, "The country name must be answered.");
+                return countries.get(Name);
+    }
+
+    public class CountryEnd{
+        private CountryInfo CountryInfo;
+        public CountryEnd(CountryInfo){
+            this.CountryInfo = countryInfo;
+        }
+    }
+    public class ChooseCountry{
+        ChooseCountry = new ChooseCountry();
+    }
+    /**
+     * This is a sample web service operation
+     */
+    @webmethod(operationName = "Country")
+    public String Country(@WebParam(name = "travel") String txt) {
+        return "Please pick the country that you want to travel to " + txt + " ?";
+    }
+}
+/**
+     * This is a country pick machine and it suppose to give the information of the country picked. When the user chooses the country the currency and population is going to populate when the user picks it. The data dictonary includes country info, country data, and pick country. As well as counrty end and choosing country.   
+     */
